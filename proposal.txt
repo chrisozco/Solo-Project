@@ -8,12 +8,12 @@ Project Outline:
 CRUD Functionallity:
     Create:
         User creation, user ability to create new post about food experience
-        Post will include dish name, location, breif description, likes,
+        Post will include dish name, city location, raiting, location, breif description,
         and image.
     Read:
-        Home page will contain all user posts with only the dish name, location,
-        image. The info page will have a all the components of the post and all
-        the comments and likes.
+        Home page will contain all user posts with only the dish name, city location,
+        image, and update/ info buttons. The info page will have a all the components of the post
+        along with an update and delete button, and the google maps api to show a map of the city.
     Update:
         Update page will be similar to the create page and will have pre-populated
         fields for the user to edit their post.
