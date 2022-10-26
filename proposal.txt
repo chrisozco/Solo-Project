@@ -1,0 +1,33 @@
+StrEats
+
+Project Outline:
+    StrEats is a social website that allows user to post and chat about
+    new and increble food experiences, wether its a restaurant, street 
+    vendor, or a new at home creation.
+
+CRUD Functionallity:
+    Create:
+        User creation, user ability to create new post about food experience
+        Post will include dish name, location, breif description, likes,
+        and image.
+    Read:
+        Home page will contain all user posts with only the dish name, location,
+        image. The info page will have a all the components of the post and all
+        the comments and likes.
+    Update:
+        Update page will be similar to the create page and will have pre-populated
+        fields for the user to edit their post.
+    Delete:
+        Delete functionallity will be available in the home page and the detailed
+        post page, if the post is deleted from the detailed page it will redirect
+        back to the home page.
+
+Bonus features:
+    Log Reg with validations for MERN application (javascript)
+    Bootstrap framework
+
+Backlog features:
+    Socket.io
+
+
+
