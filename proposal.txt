@@ -8,7 +8,7 @@ Project Outline:
 CRUD Functionallity:
     Create:
         User creation, user ability to create new post about food experience
-        Post will include dish name, city location, raiting, location, breif description,
+        Post will include dish name, city location, raiting, breif description,
         and image.
     Read:
         Home page will contain all user posts with only the dish name, city location,
@@ -18,7 +18,7 @@ CRUD Functionallity:
         Update page will be similar to the create page and will have pre-populated
         fields for the user to edit their post.
     Delete:
-        Delete functionallity will be available in the home page and the detailed
+        Delete functionallity will be available in the detailed
         post page, if the post is deleted from the detailed page it will redirect
         back to the home page.
 
