@@ -16,16 +16,16 @@ const UserSchema = new mongoose.Schema({
     }
 },  {timestamps: true})
 
-// UserSchema.virtual('confirmPassword')
-// .get(()=>this._confirmPassword)
-// .set(value=>this._confirmPassword = value)
+UserSchema.virtual('confirmPassword')
+.get(()=>this._confirmPassword)
+.set(value=>this._confirmPassword = value)
 
-// UserSchema.pre('validate',function(next){
-//     if(this.password !== this.confirmPassword){
-//         this.invalidate('confirmPassword','Password must match confirmPassword')
-//     }
-//     next()
-// })
+UserSchema.pre('validate',function(next){
+    if(this.password !== this.confirmPassword){
+        this.invalidate('confirmPassword','Password must match confirmPassword')
+    }
+    next()
+})
 
 UserSchema.pre('save', async function(next){
     try{
