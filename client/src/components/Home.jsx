@@ -6,7 +6,7 @@ const Home = () => {
     const [allPosts, setAllPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/posts')
+        axios.get('http://localhost:8000/api/posts',{withCredentials:true})
         .then((res) => {
             console.log(res)
             setAllPosts(res.data)

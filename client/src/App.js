@@ -6,6 +6,7 @@ import Home from './components/Home';
 import PostForm from './components/PostForm';
 import Update from './components/Update';
 import Detail from './components/Detail';
+import LogReg from './components/LogReg';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/post/new' element={<PostForm />} />
           <Route path='/post/edit/:id' element={<Update />} />
           <Route path='/post/:id' element={<Detail />} />
+          <Route path='/logreg' element={<LogReg />} />
         </Routes>
       </BrowserRouter>
     </div>

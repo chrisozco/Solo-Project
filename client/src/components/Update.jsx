@@ -14,7 +14,7 @@ const Update = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/posts/${id}`)
+        axios.get(`http://localhost:8000/api/posts/${id}`, {withCredentials:true})
         .then((res) => {
             setDishName(res.data.dishName)
             setLocation(res.data.location)
@@ -37,7 +37,7 @@ const Update = () => {
             raiting,
             image,
             description,
-        })
+        }, {withCredentials:true})
         .then(res => {
             console.log(res)
             console.log(res.data)

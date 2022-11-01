@@ -21,7 +21,7 @@ const PostForm = () => {
             raiting,
             image,
             description
-        })
+        },{withCredentials:true})
         .then(res => {
             console.log(res)
             console.log(res.data)

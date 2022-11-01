@@ -8,7 +8,7 @@ const Detail = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/posts/${id}`)
+        axios.get(`http://localhost:8000/api/posts/${id}`,{withCredentials:true})
         .then((res) => {
             console.log(res.data)
             setPost(res.data)
@@ -19,7 +19,7 @@ const Detail = () => {
     }, [])
 
     const deleteHandler = (id) => {
-        axios.delete(`http://localhost:8000/api/posts/${id}`)
+        axios.delete(`http://localhost:8000/api/posts/${id}`,{withCredentials:true})
         .then((res) => {
             console.log('Delete successful')
             navigate('/home')
