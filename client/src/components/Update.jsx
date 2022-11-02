@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, NavLink } from 'react-router-dom'
 
 const Update = () => {
     const [dishName, setDishName] = useState('')
@@ -49,8 +49,27 @@ const Update = () => {
         })
     }
 
+    const logout = (e) => {
+        axios.get('http://localhost:8000/api/logout',{withCredentials:true})
+            .then((res)=>{
+                console.log('logged out')
+                navigate('/logreg')
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+    }
+
     return(
         <div>
+            <div className='bg-dark fluid d-flex justify-content-around align-items-center mb-4'>
+                <h1 className='text-success col-5'>StrEats</h1>
+                <div className='col-5'>
+                    <button onClick={logout} className="btn btn-danger">Logout</button>
+                    <NavLink to="/home" className="m-3 btn btn-success">Home</NavLink>
+                    <NavLink to="/post/new" className="m-3 btn btn-light">Post</NavLink>
+                </div>
+            </div>
             <form onSubmit={updatePost}>
                 <div className='d-flex flex-row justify-content-around'>
                     <div className='col-5'>
@@ -78,6 +97,7 @@ const Update = () => {
                         <div>
                             <label className='form-label'>Food Type:</label>
                             <select className='form-control' value={foodType} onChange={(e) => setFoodType(e.target.value)}>
+                                <option >Select a Food Type!</option>
                                 <option value="Mexican">Mexican</option>
                                 <option value="Chinese">Chinese</option>
                                 <option value="Indian">Indian</option>

@@ -9,7 +9,7 @@ module.exports = {
             const newUser = await User.create(req.body)
             console.log(newUser)
             const userToken = jwt.sign({_id:newUser._id,email:newUser.email},SECRET)
-            res.status(201).cookie('userToken',userToken,{httpOnly:true,expires:new Date(Date.now() + 90000)}).json({ successMessage:'User logged in',user:newUser})
+            res.status(201).cookie('userToken',userToken,{httpOnly:true,expires:new Date(Date.now() + 900000)}).json({ successMessage:'User logged in',user:newUser})
         }
         catch(err){
             res.status(400).json(err)
@@ -28,7 +28,7 @@ module.exports = {
             }
             else{
                 const userToken = jwt.sign({_id:user._id,email:user.email},SECRET)
-                res.status(201).cookie('userToken',userToken,{httpOnly:true,expires:new Date(Date.now() + 90000)}).json({ successMessage:'User logged in',user:user})
+                res.status(201).cookie('userToken',userToken,{httpOnly:true,expires:new Date(Date.now() + 900000)}).json({ successMessage:'User logged in',user:user})
             }
         }
         catch(err){
