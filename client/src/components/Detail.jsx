@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { useParams, useNavigate, NavLink, Link } from 'react-router-dom'
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
+const API = process.env.GOOGLE_API_KEY 
 
 const Detail = () => {
     const [post, setPost] = useState({})
@@ -40,6 +42,16 @@ const Detail = () => {
             })
     }
 
+    const { isLoaded } = useJsApiLoader({
+        googleMapsApiKey: 'AIzaSyDQ9IdON3vpCcS9cb4W4hD4ciBH7OGXJ3E'
+    })
+
+    const center = { lat: 47.6062, lng: -122.3321 }
+
+    if (!isLoaded) {
+        return(<div><p>Maps Error</p></div>)
+    }
+
     return(
         <div className='bg-dark'>
             <div className='bg-dark fluid d-flex justify-content-around align-items-center mb-4'>
@@ -70,7 +82,12 @@ const Detail = () => {
                     </div>
                 </div>
                 <div className='col-5'>
-                    <p className='text-light'>Future Google Maps API</p>
+                    <GoogleMap
+                        center={center}
+                        zoom={15}
+                        mapContainerStyle={{width: '600px', height: '600px'}}>
+                        <Marker position={center} />
+                    </GoogleMap>
                 </div>
             </div>
         </div>
