@@ -43,7 +43,7 @@ const Detail = () => {
     }
 
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: 'AIzaSyDQ9IdON3vpCcS9cb4W4hD4ciBH7OGXJ3E'
+        googleMapsApiKey: API
     })
 
     const center = { lat: 47.6062, lng: -122.3321 }
